@@ -36,11 +36,16 @@ body{
                 }
                 div{
                     form{ 
-                        input, label{
+                        input{
                             display:block;
                             width:20em;
-                            height:2.5em;
+                            height:2em;
                             font-size:1.2em;
+                            margin-bottom: 1em;
+                        }
+                        label{
+                            margin-bottom:0;
+                            padding-bottom:0;
                         }
                     }
                    
