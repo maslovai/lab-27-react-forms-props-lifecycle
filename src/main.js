@@ -28,8 +28,8 @@ class App extends React.Component{
     //     this.setState({list: []})
     // }
 
-    getArticles(articles){
-        this.setState({list:articles});
+    getArticles(articles,number){
+        this.setState({list:(articles).slice(0, number)});
         console.log('in main, articles', this.state.list)
     }
 

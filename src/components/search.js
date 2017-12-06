@@ -7,7 +7,8 @@ class Search extends React.Component{
         this.state = {
             search: '',
             number: '',
-            list:[]}
+            list:[]
+        }
     
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChangeSearch = this.handleChangeSearch.bind(this);
@@ -16,6 +17,7 @@ class Search extends React.Component{
 
 handleSubmit(e){
     e.preventDefault();
+    this.setState({searchClass: ''});
     superagent
         .get(`https://www.reddit.com/r/${this.state.search}.json?limit=${this.state.number}`)
         .then((res)=>{
@@ -23,7 +25,10 @@ handleSubmit(e){
                 console.log(this.state.list);
                 // console.log('response:::::',res)
                 // let list = this.state.list;
-                this.props.articles(this.state.list);       
+                this.props.articles(this.state.list,this.state.number);       
+        })
+        .catch(err=>{
+            console.log(err);
         })  
 }  
 
@@ -43,7 +48,7 @@ render(){
                 <label htmlFor='searchFor'>Serch for:</label>
                 <input name = 'searchFor' value = {this.state.value} onChange={this.handleChangeSearch} type='text'></input>
                 <label htmlFor='resultsNumber'>Number of results (0 to100):</label>
-                <input name = 'resultsNumber' value = {this.state.value} onChange={this.handleChangeNumber}type='text'></input>
+                <input name = 'resultsNumber' type = 'number' placeholder='Enter limit: 0-100' value = {this.state.value} onChange={this.handleChangeNumber}></input>
                 <input type='submit' text = 'Submit' ></input>
             </form>
         </div>

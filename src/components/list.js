@@ -13,6 +13,7 @@ class ArticleList extends React.Component{
         console.log('articles:::::', articles);
         return(
         <div id ='resultBox'>
+            <h3>Search results:</h3>
             <ul>{
                 articles.map((article,i)=>{
                 return(
