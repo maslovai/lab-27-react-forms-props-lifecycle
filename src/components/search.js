@@ -6,7 +6,7 @@ class Search extends React.Component{
         super(props);
         this.state = {
             search: '',
-            number:'',
+            number: '',
             list:[]}
     
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -19,8 +19,12 @@ handleSubmit(e){
     superagent
         .get(`https://www.reddit.com/r/${this.state.search}.json?limit=${this.state.number}`)
         .then((res)=>{
-                console.log(res.body.data.children);
-                this.setState({list:res.body.data.children});
+                this.setState({list: res.body.data.children});
+                console.log(this.state.list);
+                // console.log('response:::::',res)
+                let list = this.state.list;
+                this.props.getArticles(list);
+                
         })  
 }  
 

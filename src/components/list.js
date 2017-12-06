@@ -4,13 +4,8 @@ class ArticleList extends React.Component{
     constructor(props){
         super(props);
         this.state={
-            articles:[]
+            articles:this.props.list
         }
-        this.getList = this.getList.bind(this);
-    }
-
-    getList(props){
-        this.setState({articles:this.props.list});
     }
 
     render(){
@@ -19,7 +14,7 @@ class ArticleList extends React.Component{
             <h3>Search Results:</h3>
             <ul>
                 {this.state.articles.map((article,i) => 
-                    <li key={i}>{article}</li>
+                    <li key={i}><a href ={article.url} target="_blank">{article.title}</a></li>
                 )}
             </ul>
         </div>

@@ -9,9 +9,15 @@ import Search from './components/search'
 class App extends React.Component{
     constructor(props){
         super(props);
-        this.state={
-            list:[]
-        }
+        this.state = {
+            search: '',
+            number:'',
+            list:[]}    
+    }
+    
+    getArticles(articles){
+        this.setState({list:articles});
+        console.log('in main, articles', this.state.list)
     }
 
     render(){
@@ -19,9 +25,8 @@ class App extends React.Component{
             <div>
                 <Header/>
                 <div>
-                    <Search />
-                    <ArtilceList list={this.state.list}
-                    /> 
+                    <Search articles = {this.getArticles}/>
+                    <ArtilceList list = {this.state.list}/>
                 </div>
                 <Footer/>
             </div>
