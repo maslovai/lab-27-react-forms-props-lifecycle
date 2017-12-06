@@ -1,21 +1,27 @@
 import React from 'react';
+import ReactDom from 'react-dom';
 
 class ArticleList extends React.Component{
     constructor(props){
         super(props);
-        this.state={
-            articles:this.props.list
-        }
     }
 
     render(){
+        
+        console.log('in list:::::', this.props.list);
+        const articles = this.props.list;
+        console.log('articles:::::', articles);
         return(
         <div id ='resultBox'>
-            <h3>Search Results:</h3>
-            <ul>
-                {this.state.articles.map((article,i) => 
-                    <li key={i}><a href ={article.url} target="_blank">{article.title}</a></li>
-                )}
+            <ul>{
+                articles.map((article,i)=>{
+                return(
+                <li key={i}>
+                  <a href={article.data.url} target = '_blank'> {article.data.title}</a>
+                </li>
+                )})
+                
+            }   
             </ul>
         </div>
         )

@@ -19,12 +19,11 @@ handleSubmit(e){
     superagent
         .get(`https://www.reddit.com/r/${this.state.search}.json?limit=${this.state.number}`)
         .then((res)=>{
-                this.setState({list: res.body.data.children});
+                this.setState({list:res.body.data.children});
                 console.log(this.state.list);
                 // console.log('response:::::',res)
-                let list = this.state.list;
-                this.props.getArticles(list);
-                
+                // let list = this.state.list;
+                this.props.articles(this.state.list);       
         })  
 }  
 

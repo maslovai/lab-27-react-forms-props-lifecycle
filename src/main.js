@@ -12,9 +12,22 @@ class App extends React.Component{
         this.state = {
             search: '',
             number:'',
-            list:[]}    
+            list:[]}  
+        this.getArticles = this.getArticles.bind(this)      
     }
     
+    // componentDidMount(){
+    //     console.log("__STATE__", this.state)
+    // }
+    
+    // componentWillMount(){
+    //     this.setState({list: []})
+    // }
+    
+    // componentWillUnmount(){
+    //     this.setState({list: []})
+    // }
+
     getArticles(articles){
         this.setState({list:articles});
         console.log('in main, articles', this.state.list)
