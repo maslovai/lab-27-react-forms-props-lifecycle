@@ -1,0 +1,148 @@
+$myColor: rgb(153, 180, 255);
+
+.header{
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: italic;
+    color: darken($myColor,60%);
+    width:100%;
+    height:auto;
+    display:flex;
+    flex-direction: column;
+    
+    .alaska{
+        display:flex;
+        flex-direction: row;
+        align-content: center;
+        align-items: center;
+        vertical-align: middle;
+        background:lighten($myColor,10%);
+        width:100%;
+        height:3em;
+        padding:1em 0 1 0;
+        span{
+            width:90%;
+            height:1em;
+            padding-left:1em;
+        }
+    
+        #menu-toggle{
+            justify-self:end;
+            height:2em;
+        }
+    }
+    .greeting{
+        display:flex;
+        flex-direction: row;
+        align-content: center;
+        align-items: center;
+        width:100%;
+        background:lighten($myColor,15%);
+        margin:0;
+        padding:0.5em 0 0.5em 0;
+        span,p{
+            margin-left:0.5em;
+        }
+        i{
+            padding: 0 0.5em;
+        }
+        
+    }
+}
+//hamburger animations adjusted from https://www.hongkiat.com/blog/hamburger-menu-animations/
+* {
+    transition:.25s ease-in-out;
+    box-sizing:border-box;
+}
+#menu-toggle {
+    width:2em;
+    height:2em;
+    background:lighten($myColor,10%);
+    border-radius:1px;
+        span {
+            display:block;
+            border-radius:1px;
+            background:lighten($myColor,30%)
+        }
+        #hamburger {
+            position:absolute;
+            width:2em;
+            height:2em;
+            padding-top: 0.6em;
+            display:flex;
+            flex-direction: column;
+            align-content: center;
+        span {
+            padding:0;
+            width:1.5em;
+            height:0.2em;
+            align-items: center;
+            vertical-align: middle;
+            margin:2px 0;
+            &:nth-child(1){
+            transition-delay:.5s;
+            }
+            &:nth-child(2){
+            transition-delay:.625s;
+            }
+            &:nth-child(3){
+            transition-delay:.75s;
+            }
+        }
+    }
+    #cross {
+    // position:absolute;
+    height:100%;
+    width:100%;
+    transform:rotate(45deg);
+    span{
+        padding:0;
+        &:nth-child(1){
+        height:0%;
+        width:3px;
+        position:absolute;
+        top:9%;
+        left:50%;
+        transition-delay:0s;
+        }
+        &:nth-child(2){
+        width:0%;
+        height:3px;
+        position:absolute;
+        left:10%;
+        top:50%;
+        transition-delay:.25s;
+        }
+    }
+    }
+}
+
+#menu-toggle.open {
+    #hamburger {
+    span {
+        width:0%;
+        &:nth-child(1){
+        transition-delay:0s;
+        }
+        &:nth-child(2){
+        transition-delay:.125s;
+        }
+        &:nth-child(3){
+        transition-delay:.25s;
+        }
+    }
+    }
+    #cross {
+    span {
+        &:nth-child(1){
+        height:92%;
+        transition-delay:.625s;
+        }
+    }
+    span {
+        &:nth-child(2){
+        width:90%;
+        transition-delay:.375s;
+        }
+    }    
+    }
+}

@@ -1,0 +1,14 @@
+ul{
+    margin-top:0px;
+    padding-left:0px; 
+}
+.hidden{
+    // display:none;
+    max-height:0px;
+    overflow:hidden;
+}
+.active{
+    // display:block;
+    max-height:650px;
+    transition:all 1s ease;
+}

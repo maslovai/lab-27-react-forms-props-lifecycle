@@ -1,5 +1,5 @@
 {
-  "name": "lab-27-react-forms-props-lifecycle",
+  "name": "indigo_coding_challenge",
   "version": "1.0.0",
   "description": "forms",
   "main": "index.js",
@@ -8,9 +8,7 @@
     "watch": "webpack-dev-server --inline --hot --public"
   },
   "repository": {
-    "type": "git",
-    "url": "git+https://github.com/maslovai/lab-27-react-forms-props-lifecycle.git"
-  },
+    "url": "git+https://github.com/maslovai/challenge_react.git"},
   "keywords": [
     "forms",
     "react"
@@ -18,12 +16,12 @@
   "author": "iryna",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/maslovai/lab-27-react-forms-props-lifecycle/issues"
+    "url": "https://github.com/maslovai/challenge_react/issues"
   },
-  "homepage": "https://github.com/maslovai/lab-27-react-forms-props-lifecycle#readme",
   "devDependencies": {
     "eslint": "^4.12.1"
   },
+  "homepage": "https://github.com/maslovai/challenge_react#readme",
   "dependencies": {
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",

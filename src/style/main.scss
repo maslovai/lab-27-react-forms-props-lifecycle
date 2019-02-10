@@ -1,58 +1,25 @@
-$myColor:grey;
+$myColor: rgb(153, 180, 255);
 body{
+    background:gradient($myColor, lighten($myColor,20%));
     display: flex;
-    background-color:darken($myColor,10%);
-    color:$myColor;
-    justify-content: space-around;
-        div{
-            width:90%;
-        div{
-            margin-top:2em;
-            width:100%;
-            height: 40em;
-            border:solid, 0.5em, black;
-            background-color:lighten($myColor, 25%);
-            color: darken($myColor,30%);
-            display: flex;
-            flex-direction: column;
-            align-content: center;
-            justify-content: space-around;
-            align-items: center;
-            header{
-                width:100%;
-                font-size: 0.9em;
-                text-align: center;
-            }
-            div{
-                display: flex;
-                flex-direction: row;
-                justify-content: space-between;
-                height:20em;
-
-                #searchBox, #resultBox{
-                    padding-left:2em;
-                    display: inline;
-                    align-content: center;
-                }
-                
-                div{
-                    form{ 
-                        input{
-                            display:block;
-                            width:20em;
-                            height:2em;
-                            font-size:1.2em;
-                            margin-bottom: 1em;
-                        }
-                        label{
-                            margin-bottom:0;
-                            padding-bottom:0;
-                        }
-                    }
-                   
-                }
-            }
-            
-        }
-    }    
+    #root{
+        position: absolute;
+        left: 30%;
+        background-color:darken($myColor,10%);
+        color:darken($myColor, 60%);
+        justify-content: space-around;
+        flex-direction: column;
+        width:25%;
+        height:50em;
+    }
+    .hidden{
+        max-width:0px;
+        overflow:hidden;
+        opacity:0;
+    }
+    .active{
+        max-width:650px;
+        transition:all 500ms ease;
+        opacity: 1;
+    }
 }
