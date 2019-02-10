@@ -7,21 +7,17 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "watch": "webpack-dev-server --inline --hot --public"
   },
-  "repository": {
-    "url": "git+https://github.com/maslovai/challenge_react.git"},
+
   "keywords": [
     "forms",
     "react"
   ],
   "author": "iryna",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/maslovai/challenge_react/issues"
-  },
+ 
   "devDependencies": {
     "eslint": "^4.12.1"
   },
-  "homepage": "https://github.com/maslovai/challenge_react#readme",
   "dependencies": {
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
